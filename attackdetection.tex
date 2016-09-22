@@ -45,8 +45,8 @@
 \setbeamertemplate{caption}{\insertcaption}
 
 \setbeamertemplate{footline}[text line]{%
-\parbox{\linewidth}{\vspace*{-12pt}\hfill{}Jonathan
-Jogenfors\hfill{}\texttt{jonathan.jogenfors@liu.se}\hfill\insertframenumber/\inserttotalframenumber}}
+%LEO: I need footnotes.%\parbox{\linewidth}{\vspace*{-12pt}\hfill{}JonathanJogenfors\hfill{}\texttt{jonathan.jogenfors@liu.se}\hfill\insertframenumber/\inserttotalframenumber}}
+\parbox{\linewidth}{\vspace*{-12pt}\hfill{}\hfill{}\hfill\insertframenumber/\inserttotalframenumber}}
 \setbeamertemplate{navigation symbols}{}
 
 
@@ -111,11 +111,250 @@ Jogenfors\hfill{}\texttt{jonathan.jogenfors@liu.se}\hfill\insertframenumber/\ins
 \begin{frame}{Honeypots}
 
 \end{frame}
+% \begin{frame}{Control Theory}
+%     \begin{itemize}
+%      \item Control systems: measure, compare, compute and correct.
+%     \end{itemize}
+% 
+% \end{frame}
 \begin{frame}{Papers}
-    Motivation
+    \textbf{Motivation}
+    \begin{itemize}
+     \item Papers \cite{pasqualetti2013attack} and \cite{genge2015system} were \textbf{selected} based on their \textbf{relevance} to the theme of \textit{``attack detection methods''} for \textit{``critical infrastructures''}. 
+     \item Paper \cite{vasilo2016multi} was in the course's reading list.
+
+    \end{itemize}
+    \begin{table}\tiny
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\textbf{Paper} & \textbf{Year} & \textbf{CI Sub-area} & \textbf{Citations} & \textbf{Journal IF}\\ 
+	\hline \hline
+	Pasqualetti et al \cite{pasqualetti2013attack} & 2013 & Attack Detection & 210 & 2.777\\
+	Genge et al \cite{genge2015system} & 2015 & Attack Prevention \& Detection & 12 & 1.351\\
+	Vasilomanolakis et al \cite{vasilo2016multi} & 2016 & Attack Detection & 1 & n.a \\
+	\hline
+	\end{tabular}
+    \end{table}
 \end{frame}
 \begin{frame}{Attack detection and identification in cyberphysical systems
     (2013)}
 
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \textbf{Aim \& Contribution}
+    \begin{itemize}
+     \item To \textbf{identify} and \textbf{rank} assets in complex, large-scale and heterogeneous CIs.
+     \item \textbf{Cyber Attack Impact Assessment} (CAIA) methodology that helps system admins to understand:
+     \begin{enumerate}
+      \item How cyber attacks affect the normal functioning of physical processes?
+      \item What cyber assets would cause the most negative impact if compromised?
+     \end{enumerate}
+    \end{itemize}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \textbf{CAIA Methodology}
+    \begin{figure}
+      \centering
+      \includegraphics[width = 0.75\textwidth]{./images/caia-method.png}
+      % caia-method.jpg: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      % \caption{CAIA Methodology.}
+      \label{fig:caia-method}
+    \end{figure}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \textbf{Experiments \& Comparisons}
+    \begin{itemize}
+     \item First, the \textbf{basic functioning} of CAIA is demonstrated using IEEE 14-bus electric grid model.
+     \item Second, CAIA's \textbf{scalability} is proven by using attack scenarios in the context of IEEE 300-bus electric grid model.
+     \item Third, CAIA's \textbf{cross-sector applicability} is evaluated using Tennessee Eastman chemical process system.
+     \item The methodology was also \textbf{compared} with other approaches (i.e., graph-theoretic and electrical centrality metric techniques).
+    \end{itemize}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \begin{columns}
+     \begin{column}{0.55\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/ieee-14-bus.png}
+      % ieee-14-bus.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:ieee-14-bus}
+      \end{figure}
+     \end{column}
+     \begin{column}{0.45\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/caia-param.png}
+      % caia-param.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:caia-param}
+      \end{figure}
+     \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \begin{columns}
+     \begin{column}{0.55\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/ieee-14-bus.png}
+      % ieee-14-bus.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:ieee-14-bus-2}
+      \end{figure}
+     \end{column}
+     \begin{column}{0.45\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/caia-param-impact.png}
+      % caia-param-impact.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:caia-param-impact}
+      \end{figure}
+     \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{./images/stealthy-attack-sequence.png}
+    % stealthy-attack-sequence.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+    \label{fig:stealthy-attack-sequence}
+    \end{figure}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \begin{columns}
+     \begin{column}{0.4\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/caia-impact-stealthy.png}
+      % caia-impact-stealthy.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:ieee-14-bus}
+      \end{figure}
+     \end{column}
+     \begin{column}{0.6\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/stealthy-operator-view.png}
+      % stealthy-operator-view.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:stealthy-operator-view}
+      \end{figure}
+     \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
+    \textbf{Limitations}
+    \begin{itemize}
+     \item CAIA helps to identify and rank assets given specific interventions (e.g., an attack)
+     \item Which interventions are relevant to test (?), and, how to protect the assets after generating the impact matrix (?) are open questions; out of the paper's scope.
+     \item Obvious Note: the knowledge of impact matrices would be definitely valuable to attackers(!); as any risk assessment information.
+     \item Seems hard to reproduce since no detailed information is given about the simulations; plus, no source code.
+    \end{itemize}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Aim \& Contribution
+    \begin{itemize}
+     \item HosTaGe: honeypot for detecting multi-stage attacks in ICS networks.
+     \item Honeypot extension with capabilities of ICS protocols, i.e., Modbus, S7, SNMP, HTTP, Telnet, SMB and SMTP.
+     \item Basic functions:
+     \begin{enumerate}
+      \item notify the network administrators;
+      \item produce an attack signature;
+      \item forward the signature to the internal IDSs.
+     \end{enumerate}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Expermients \& Comparisons
+    \begin{itemize}
+     \item HosTaGe was compared with ``CONPOT ICS/SCADA Honeypot''~\footnote{http://conpot.org/}
+     \item Criteria:
+     \begin{enumerate}
+      \item ability to not be evade (i.e., be perceived by attackers);
+      \item ability to detect multi-stage attacks;
+      \item ability to generate valid signatures for Bro IDS~\footnote{https://www.bro.org/}.
+     \end{enumerate}
+    \end{itemize}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Formal Model - Extended Finite State Machine (EFSM)
+    \begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{./images/hostage-efsm.png}
+    % hostage-efsm.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+    \label{fig:hostage-efsm}
+    \end{figure}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Formal Model - Extended Finite State Machine (EFSM)
+    \begin{itemize}
+     \item Detection Mechanism
+     \begin{enumerate}
+      \item Single-Protocol Level Detection (SPLD)
+      \item Multi-Stage Level Detection (MSLD)
+      \item Payload Level Detection (PLD)
+     \end{enumerate}
+     \item Time window ($tw$) determines whether an attack should be mapped as SPLD or MSLD
+    \end{itemize}
+\end{frame}
+% \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+%     Example - Detection of Stuxnet
+%     \begin{figure}
+%     \centering
+%     \includegraphics[width=1.0\textwidth]{./images/hostage-stuxnet-detection.png}
+%     % hostage-stuxnet-detection.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+%     \label{fig:hostage-stuxnet-detection}
+%     \end{figure}
+% \end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Example - Signature Generation
+    \begin{itemize}
+     \item Automatically generate signature for well-known Metasploit script\footnote{No further information given by the authors...} for Modbus services identification.
+    \end{itemize}
+    \begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{./images/hostage-signature.png}
+    % hostage-signature.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+    \label{fig:hostage-signature}
+    \end{figure}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    Comparison - Honeypot x CONPOT
+    \begin{itemize}
+     \item Controlled environment, no firewalls, 8 to 12 weeks, probing by Shodan\footnote{https://www.shodan.io/}.
+    \end{itemize}
+    \begin{columns}
+     \begin{column}{0.55\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/hostage-conpot-comparison.png}
+      % hostage-conpot-comparison.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:hostage-conpot-comparison}
+      \end{figure}
+     \end{column}
+     \begin{column}{0.45\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=1.0\textwidth]{./images/hostage-ip-sources.png}
+      % hostage-ip-sources.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+      \label{fig:hostage-ip-sources}
+      \end{figure}
+     \end{column}
+    \end{columns}
+\end{frame}
+\end{frame}
+\begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
+    \textbf{Limitations}
+    \begin{itemize}
+     \item The evaluation of multi-stage signature generation was rather shallow.
+     \item Shodan's probes were not explained in details, i.e., how Shodan detect a honeypot?
+    \end{itemize}
+    More info about HosTaGe can be found at Darmstad's research group website\footnote{https://www.tk.informatik.tu-darmstadt.de/de/research/secure-smart-infrastructures/hostage/}.
+\end{frame}
+
+\begin{frame}{Discussions}
+      %%Input good questions here.
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}\tiny{
+\def\newblock{}
+\bibliographystyle{plain}
+\bibliography{./references.bib}}
 \end{frame}
 \end{document}
