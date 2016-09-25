@@ -52,8 +52,8 @@
 
 \setbeamerfont{subtitle}{series=\normalfont}
 
-\title{Attack Detection}
-\subtitle{}
+\title{Detection fo Attacks}
+\subtitle{Securing critical information infrastructures}
 \author{Jonathan Jogenfors\\ Leonardo Iwaya}
 \date{2016-09-26}
 
@@ -256,9 +256,9 @@
     \end{itemize}
 \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Aim \& Contribution
+    \textbf{Aim \& Contribution}
     \begin{itemize}
-     \item HosTaGe: honeypot for detecting multi-stage attacks in ICS networks.
+     \item HosTaGe: honeypot for detecting \textbf{multi-stage attacks} in ICS networks.
      \item Honeypot extension with capabilities of ICS protocols, i.e., Modbus, S7, SNMP, HTTP, Telnet, SMB and SMTP.
      \item Basic functions:
      \begin{enumerate}
@@ -269,9 +269,9 @@
     \end{itemize}
 \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Expermients \& Comparisons
+    \textbf{Expermients \& Comparisons}
     \begin{itemize}
-     \item HosTaGe was compared with ``CONPOT ICS/SCADA Honeypot''~\footnote{http://conpot.org/}
+     \item HosTaGe was \textbf{compared} with ``CONPOT ICS/SCADA Honeypot''~\footnote{http://conpot.org/}
      \item Criteria:
      \begin{enumerate}
       \item ability to not be evade (i.e., be perceived by attackers);
@@ -281,7 +281,7 @@
     \end{itemize}
 \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Formal Model - Extended Finite State Machine (EFSM)
+    \textbf{Formal Model - Extended Finite State Machine (EFSM)}
     \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{./images/hostage-efsm.png}
@@ -290,7 +290,7 @@
     \end{figure}
 \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Formal Model - Extended Finite State Machine (EFSM)
+    \textbf{Formal Model - Extended Finite State Machine (EFSM)}
     \begin{itemize}
      \item Detection Mechanism
      \begin{enumerate}
@@ -298,7 +298,7 @@
       \item Multi-Stage Level Detection (MSLD)
       \item Payload Level Detection (PLD)
      \end{enumerate}
-     \item Time window ($tw$) determines whether an attack should be mapped as SPLD or MSLD
+     \item \textbf{Time window} ($tw$) determines whether an attack should be mapped as SPLD or MSLD
     \end{itemize}
 \end{frame}
 % \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
@@ -311,7 +311,7 @@
 %     \end{figure}
 % \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Example - Signature Generation
+    \textbf{Example - Signature Generation}
     \begin{itemize}
      \item Automatically generate signature for well-known Metasploit script\footnote{No further information given by the authors...} for Modbus services identification.
     \end{itemize}
@@ -323,7 +323,7 @@
     \end{figure}
 \end{frame}
 \begin{frame}{Multi-stage Attack Detection and Signature Generation with ICS Honeypots (2016)}
-    Comparison - Honeypot x CONPOT
+    \textbf{Comparison - Honeypot x CONPOT}
     \begin{itemize}
      \item Controlled environment, no firewalls, 8 to 12 weeks, probing by Shodan\footnote{https://www.shodan.io/}.
     \end{itemize}
@@ -355,8 +355,15 @@
     More info about HosTaGe can be found at Darmstad's research group website\footnote{https://www.tk.informatik.tu-darmstadt.de/de/research/secure-smart-infrastructures/hostage/}.
 \end{frame}
 
-\begin{frame}{Discussions}
-      %%Input good questions here.
+\begin{frame}{Q\&A and Discussions}
+      \textbf{Debate Suggestions}
+      \begin{itemize}
+       \item \textbf{Attacker models} \cite{pasqualetti2013attack,genge2015system} -- strong assumptions; absolute knowledge and control.
+       \item \textbf{Study validation} -- enough tests; data sources; experiment description.
+       \item \textbf{Reproducibility} -- enough information; open source; plant models.
+       \item \textbf{Overall critics} about the papers -- readability; depth; contribution.
+      \end{itemize}
+
 \end{frame}
 
 \begin{frame}[allowframebreaks]{References}\tiny{
