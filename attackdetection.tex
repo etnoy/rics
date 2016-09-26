@@ -1,44 +1,40 @@
 % -*-  mode: TeX-PDF-mode;  -*-
 \documentclass[compress]{beamer}
+\let\Tiny=\tiny
+
 \mode<presentation>
 
 \usetheme{metropolis}
 \graphicspath{{./}{images/}}
 
-\definecolor{darkgreen}{rgb}{0, .6, 0}
-\definecolor{darkred}{rgb}{.75,0,0}
-
 % include packages
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage{scalefnt}
 \usepackage{attrib}
 \usepackage{multicol}
 \usepackage{mathtools}
 \usepackage[compatibility=false]{caption}
+\usepackage{lmodern}
 \usepackage{booktabs}
 \usepackage{csquotes}
-\usepackage{siunitx}
 \usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{standalone}
 \usepackage{url}
 \usepackage{multimedia}
 \usepackage{hyperref}
+\usepackage{amsthm}
 \usepackage{url}
-\usepackage{braket}
-\usepackage{verbatim}
-\usepackage{tcolorbox}
-\usepackage{relsize}
 \usepackage{subcaption}
-\usepackage{allrunes}
 \usepackage{siunitx}
-\usepackage{textcomp}
 \usepackage[normalem]{ulem}
-\usetikzlibrary{shapes.geometric,shapes,positioning,shapes.symbols,arrows,calc,fit,external}
+\usepackage[url=false,backend=biber,%
+    firstinits=true,sorting=none,sortfirstinits=true,clearlang=true,%
+    maxnames=3,minnames=1,uniquename=false,%
+    maxbibnames=10
+]{biblatex}
+\renewcommand\textbullet{\ensuremath{\bullet}}
 
-\tcbuselibrary{listingsutf8,breakable,theorems,skins}
+
+\addbibresource{references.bib}
 
 \captionsetup[figure]{labelformat=empty}
 \captionsetup[table]{labelformat=empty}
@@ -49,39 +45,18 @@
 \parbox{\linewidth}{\vspace*{-12pt}\hfill{}\hfill{}\hfill\insertframenumber/\inserttotalframenumber}}
 \setbeamertemplate{navigation symbols}{}
 
-
 \setbeamerfont{subtitle}{series=\normalfont}
 
-\title{Detection fo Attacks}
+
+\title{Detection of Attacks}
 \subtitle{Securing critical information infrastructures}
 \author{Jonathan Jogenfors\\ Leonardo Iwaya}
 \date{2016-09-26}
 
-\newtcbinputlisting[]{\listing}[1][]{%
-    listing only,
-    fontupper=\huge,
-}
 \begin{document}
 \small
-\frame{\titlepage}
-\begin{frame}{Introduction}
-    \begin{columns}
-        \begin{column}{0.8\textwidth}
-    \begin{itemize}
-        \item About us
-    \end{itemize}
-        \end{column}
-        \begin{column}{0.2\textwidth}  %%<--- here
-            \begin{center}
-
-                \includegraphics[width=\textwidth]{jonathan.jpg}
-
-
-            \end{center}
-        \end{column}
-    \end{columns}
-\end{frame}
-\begin{frame}
+\frame{\titlepage{} }
+\begin{frame}{Why detect attacks?}
     \begin{itemize}
         \item Model of information security: Prevention, Detection, Reaction
             (PRD)
@@ -98,12 +73,6 @@
         \item
 
     \end{itemize}
-\end{frame}
-\begin{frame}{When prevention fails}
-
-\end{frame}
-\begin{frame}{Anomaly detection}
-
 \end{frame}
 \begin{frame}{Intrusion Detection Systems \& Honeypots}
 \begin{figure}
@@ -144,10 +113,78 @@
 	\end{tabular}
     \end{table}
 \end{frame}
-\begin{frame}{Attack detection and identification in cyberphysical systems
+\begin{frame}{Attack detection and identification in cyber-physical systems
     (2013)}
+    Model systems as a formal linear system:
+    \begin{equation}
+        \begin{split}
+            E \dot x(t)&=Ax(t)+Bu(t) \\
+            y(t)&=Cx(t)+Du(t)
+        \end{split}
+        \label{}
+    \end{equation}
+    The paper is highly theoretic but delivers a number of \emph{fundamental}
+    results on attack detections
 
 \end{frame}
+\begin{frame}{Attack detection and identification in cyber-physical systems
+    (2013)}
+    Assumptions:
+    \begin{itemize}
+        \item Determinant is nonzero:
+    \begin{equation}
+        \begin{split}
+            |sE-A|\neq 0
+        \end{split}
+        \label{}
+    \end{equation}
+\item Initial condition is consistent
+\item Smooth input signal (no impulses)
+    \end{itemize}
+
+\end{frame}
+\begin{frame}{Attack detection and identification in cyber-physical systems
+    (2013)}
+    \begin{itemize}
+        \item Attack monitor uses the output signal $y(x,u,t)$ to detect attacks
+            on the input $u(t)$.
+        \item Attack is detectable (weaker)
+        \item Attack is identifiable (stronger)
+    \end{itemize}
+
+\end{frame}
+\begin{frame}{Attack detection and identification in cyber-physical systems
+    (2013)}
+   Some of the results on detectability:
+   \begin{theorem}
+       A nonzero attack is undetectable iff
+       \begin{equation}
+           y(x_1,u_K,t)=y(x_2,0,t)
+           \label{}
+       \end{equation}
+   \end{theorem}
+   \begin{theorem}
+       A nonzero attack is unidentifiable iff
+       \begin{equation}
+           y(x_1,u_K,t)=y(x_2,u_R,t)
+           \label{}
+       \end{equation}
+       for some attack $R$ with $|R|\leq |K|$ and $R\neq K$.
+   \end{theorem}
+\end{frame}
+
+\begin{frame}{Attack detection and identification in cyber-physical systems
+    (2013)}
+        The paper continues to design attack detection systems
+        \begin{itemize}
+            \item Centralized system
+            \item Distributed system
+        \end{itemize}
+        as well as some results on the \enquote{Attack Identification Problem}.
+\end{frame}
+
+
+
 \begin{frame}{A system dynamics approach for assessing the impact of cyber attacks on CI (2015)}
     \textbf{Aim \& Contribution}
     \begin{itemize}
@@ -382,6 +419,7 @@ the following statements is TRUE:}
            response
       \end{enumerate}
 \end{frame}
+
 \begin{frame}{Question for paper ``Attack detection and identification in
     cyberphysical systems (Pasqualetti et al, 2013)''}
     \textbf{Regarding the fundamental limitations derived in the paper, which of
@@ -443,9 +481,9 @@ the following statements is FALSE:}
       \end{enumerate}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{References}\tiny{
+\begin{frame}[allowframebreaks]{References}
 \def\newblock{}
-\bibliographystyle{plain}
-\bibliography{./references.bib}}
+\printbibliography{}
+
 \end{frame}
 \end{document}
